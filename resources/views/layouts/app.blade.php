@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html>AMAN
 <html lang="id" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'LAPOR EDU! - Platform Pengaduan Sekolah')</title>
+    <title>@yield('title', 'RUANG AMAN! - Platform Pengaduan Sekolah')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="min-h-screen bg-slate-50" x-data>
 
-    <!-- Top Navigation (Desktop) -->
     <nav class="hidden md:block fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            
             <a href="{{ route('landing') }}" class="flex items-center gap-2">
                 <div class="w-8 h-8 bg-justice rounded-lg flex items-center justify-center">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,18 +21,24 @@
                             d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </div>
-                <span class="font-extrabold text-midnight-700 text-lg">LAPOR EDU!</span>
+                <span class="font-extrabold text-midnight-700 text-lg">RUANG AMAN</span>
             </a>
-            <div class="flex items-center gap-1">
+
+            <div class="flex items-center gap-2">
                 <a href="{{ route('landing') }}"
                     class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-midnight-700 rounded-lg hover:bg-slate-50 transition-colors">Beranda</a>
+                <a href="#tentang"
+                    class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-midnight-700 rounded-lg hover:bg-slate-50 transition-colors">Tentang Kami</a>
+            </div>
+
+            <div class="flex items-center gap-1">
                 @guest
                     <a href="{{ route('login') }}"
                         class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-midnight-700 rounded-lg hover:bg-slate-50 transition-colors">Masuk</a>
                     <a href="{{ route('register') }}" class="btn-primary text-sm !py-2 !px-5">Daftar</a>
                 @endguest
                 @auth
-                    <a href="{{ route('pelapor.report.create') }}" class="btn-primary text-sm !py-2 !px-5">
+                    <a href="{{ route('pelapor.report.create') }}" class="btn-primary text-sm !py-2 !px-5 mr-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                         </svg>
@@ -101,10 +107,10 @@
                     </div>
                 @endauth
             </div>
+
         </div>
     </nav>
 
-    <!-- Bottom Navigation (Mobile) -->
     <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-xl border-t border-slate-100">
         <div class="flex items-center justify-around h-16 px-2">
             <a href="{{ route('landing') }}"
@@ -161,7 +167,6 @@
         </div>
     </nav>
 
-    <!-- Toast Notification -->
     <div x-data="toast()" x-show="show"
         x-init="@if(session('success')) display('{{ session('success') }}', 'success') @endif @if(session('error')) display('{{ session('error') }}', 'error') @endif"
         class="fixed top-20 right-4 z-[60] max-w-sm" x-transition:enter="transition ease-out duration-300"
@@ -193,12 +198,9 @@
         </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="@auth md:pt-16 @endauth pb-20 md:pb-0">
-        @yield('content')
-    </main>
-
-    <!-- PANIC BUTTON -->
+   <main class="md:pt-16 pb-20 md:pb-0">
+    @yield('content')
+</main>
     @auth
         @if(auth()->user()->isPelapor())
             <button onclick="window.location.href='https://www.google.com'" class="fixed z-50 flex items-center gap-2 px-4 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-full shadow-2xl shadow-red-500/40 transition-all duration-200 active:scale-90

@@ -15,12 +15,7 @@
         <div class="relative max-w-7xl mx-auto px-4 md:px-6">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left animate-slide-up">
-                    <div
-                        class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6">
-                        <span class="w-2 h-2 bg-justice rounded-full animate-pulse"></span>
-                        <span class="text-xs font-semibold text-emerald-200 tracking-wide">SDG 16 — Keadilan, Perdamaian &
-                            Kelembagaan Kuat</span>
-                    </div>
+                    
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6">
                         Wujudkan Sekolah yang <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-justice-light to-safe-light">Aman &
@@ -39,7 +34,7 @@
                             </svg>
                             {{ Auth::check() ? 'Buat Pengaduan' : 'Daftar & Laporkan' }}
                         </a>
-                        <a href="#tentang"
+                        <a href="#cara kerja"
                             class="btn-outline !border-white/30 !text-white hover:!bg-white/10 text-base !py-3.5 !px-8">
                             Pelajari Lebih Lanjut
                         </a>
@@ -128,7 +123,7 @@
     </section>
 
     <!-- Cara Kerja -->
-    <section class="py-16 bg-white">
+    <section id="cara kerja" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
             <div class="text-center mb-14">
                 <span
@@ -218,7 +213,7 @@
                                 d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <span class="font-bold">LAPOR EDU!</span>
+                    <span class="font-bold">RUANG AMAN</span>
                     <span class="text-slate-400 text-sm">— Platform Pengaduan Sekolah</span>
                 </div>
                 <p class="text-sm text-slate-400">Berdasarkan SDG 16 & Permendikbud No. 82/2015</p>

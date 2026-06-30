@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Notifikasi - LAPOR EDU!')
+@section('title', 'Notifikasi - RUANG AMAN')
 
 @section('content')
     <div class="max-w-3xl mx-auto px-4 py-8 md:py-12">
